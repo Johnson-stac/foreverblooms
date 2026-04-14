@@ -1,4 +1,6 @@
-function ProductCard({ name, price, image, tag, comingSoon = false }) {
+import { Link } from 'react-router-dom'
+
+function ProductCard({ slug, name, price, image, tag, comingSoon = false }) {
   const handleWhatsAppClick = () => {
     if (comingSoon) {
       return
@@ -47,18 +49,31 @@ Please share total cost.`
         </p>
       </div>
 
-      <button
-        type="button"
-        onClick={handleWhatsAppClick}
-        disabled={comingSoon}
-        className={`mt-6 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition ${
-          comingSoon
-            ? 'cursor-not-allowed bg-lavender-100 text-lavender-700'
-            : 'bg-taupe-900 text-white hover:bg-dustyrose-500'
-        }`}
-      >
-        {comingSoon ? 'Coming Soon' : 'Order on WhatsApp'}
-      </button>
+      {comingSoon ? (
+        <button
+          type="button"
+          disabled
+          className="mt-6 inline-flex w-full cursor-not-allowed items-center justify-center rounded-full bg-lavender-100 px-5 py-3 text-sm font-semibold text-lavender-700"
+        >
+          Coming Soon
+        </button>
+      ) : (
+        <div className="mt-6 grid gap-3">
+          <Link
+            to={`/products/${slug}`}
+            className="inline-flex w-full items-center justify-center rounded-full bg-lavender-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-lavender-500"
+          >
+            View Details
+          </Link>
+          <button
+            type="button"
+            onClick={handleWhatsAppClick}
+            className="inline-flex w-full items-center justify-center rounded-full bg-taupe-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-dustyrose-500"
+          >
+            Order on WhatsApp
+          </button>
+        </div>
+      )}
     </article>
   )
 }

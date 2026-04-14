@@ -1,59 +1,8 @@
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import ProductCard from '../components/ProductCard'
-import tulipsBouquetImage from '../assets/bouquet-tulips.png'
-import rosesBouquetImage from '../assets/bouquet-roses.png'
-import liliesBouquetImage from '../assets/bouquet-lilies.png'
-import orchidsBouquetImage from '../assets/bouquet-orchids.png'
 import cynaraRosarioImage from '../assets/cynara-rosario.jpeg'
-
-const bouquets = [
-  {
-    name: 'Tulips',
-    price: '₹899 - ₹1199',
-    image: tulipsBouquetImage,
-    tag: 'Handmade | Customizable',
-  },
-  {
-    name: 'Roses',
-    price: '₹899 - ₹1199',
-    image: rosesBouquetImage,
-    tag: 'Handmade | Customizable',
-  },
-  {
-    name: 'Lilies',
-    price: '₹899 - ₹1199',
-    image: liliesBouquetImage,
-    tag: 'Handmade | Customizable',
-  },
-  {
-    name: 'Orchids',
-    price: '₹899 - ₹1199',
-    image: orchidsBouquetImage,
-    tag: 'Handmade | Customizable',
-  },
-  {
-    name: 'Peonies',
-    price: 'Launching Soon',
-    image: '',
-    tag: 'Coming Soon | Limited Edit',
-    comingSoon: true,
-  },
-  {
-    name: 'Daisies',
-    price: 'Launching Soon',
-    image: '',
-    tag: 'Coming Soon | Garden Fresh',
-    comingSoon: true,
-  },
-  {
-    name: 'Pastel Mix',
-    price: 'Launching Soon',
-    image: '',
-    tag: 'Coming Soon | Signature Wrap',
-    comingSoon: true,
-  },
-]
+import { availableProducts, products } from '../data/products'
 
 const categories = [
   'Same Day Delivery',
@@ -66,16 +15,16 @@ const categories = [
 
 const highlights = [
   {
-    title: 'Free note card',
-    detail: 'Personal messages tucked into every bouquet order.',
+    title: 'Boutique styling',
+    detail: 'Each bouquet is wrapped to feel gift-ready, premium, and visually soft from the first glance.',
   },
   {
-    title: 'Curated pastel wraps',
-    detail: 'Lavender, beige, blush and ivory styling for a softer finish.',
+    title: 'Luxury finishing',
+    detail: 'Layered papers, satin ribbon, and carefully balanced stems give every order a more elevated feel.',
   },
   {
-    title: 'Mumbai delivery',
-    detail: 'Quick dispatch windows for gifts that still feel thoughtful.',
+    title: 'Personal customization',
+    detail: 'Choose your bouquet, increase the flower count, and place your order directly through WhatsApp.',
   },
 ]
 
@@ -124,20 +73,6 @@ function HomePage() {
               </div>
             ))}
           </div>
-
-          <div className="mt-4 grid gap-4 sm:grid-cols-3">
-            {highlights.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-[1.5rem] border border-white/70 bg-white/80 px-5 py-5 shadow-[0_16px_40px_rgba(143,113,110,0.06)]"
-              >
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-lavender-700">
-                  {item.title}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-taupe-600">{item.detail}</p>
-              </div>
-            ))}
-          </div>
         </section>
 
         <section className="mx-auto grid w-full max-w-7xl items-center gap-8 px-4 pb-16 pt-8 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:px-10 lg:pb-28 lg:pt-14">
@@ -149,7 +84,7 @@ function HomePage() {
               Handmade Bouquets with Love
             </h1>
             <p className="mt-5 max-w-xl text-base leading-7 text-taupe-600 sm:text-lg sm:leading-8">
-              Custom floral designs for every occasion
+              Curated bouquet designs with a softer, more premium finish for birthdays, anniversaries, heartfelt gifting, and intimate celebrations.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -165,6 +100,20 @@ function HomePage() {
                 Why ForeverBlooms
               </a>
             </div>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {highlights.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-[1.5rem] border border-white/70 bg-white/80 px-5 py-5 shadow-[0_16px_40px_rgba(143,113,110,0.06)]"
+                >
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-lavender-700">
+                    {item.title}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-taupe-600">{item.detail}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="relative order-1 lg:order-2">
@@ -175,23 +124,23 @@ function HomePage() {
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="rounded-[1.5rem] bg-white/90 p-5">
                     <p className="text-xs uppercase tracking-[0.16em] text-taupe-500 sm:text-sm">
-                      Signature
+                      Signature Bouquet
                     </p>
                     <p className="mt-3 font-display text-2xl text-taupe-900 sm:text-3xl">
-                      Soft pinks
+                      Tulips
                     </p>
                   </div>
                   <div className="rounded-[1.5rem] bg-lavender-700 p-5 text-white">
                     <p className="text-xs uppercase tracking-[0.16em] text-white/60 sm:text-sm">
-                      Crafted
+                      Starting At
                     </p>
-                    <p className="mt-3 font-display text-2xl sm:text-3xl">With care</p>
+                    <p className="mt-3 font-display text-2xl sm:text-3xl">₹950</p>
                   </div>
                   <div className="sm:col-span-2 overflow-hidden rounded-[1.75rem] border border-blush-200/70 bg-white/85">
                     <img
-                      src={tulipsBouquetImage}
+                      src={availableProducts[0].image}
                       alt="Tulips bouquet"
-                      className="h-64 w-full object-cover object-center sm:h-72"
+                      className="h-[26rem] w-full object-cover object-center sm:h-[32rem]"
                     />
                   </div>
                 </div>
@@ -209,12 +158,12 @@ function HomePage() {
               Bestselling Blooms
             </h2>
             <p className="mt-2 text-base text-taupe-500">
-              Floral arrangements that get the most love, plus a few upcoming additions.
+              Tap a bouquet to open its detail page, see the full information, and customize the flower count.
             </p>
           </div>
 
           <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-            {bouquets.map((bouquet) => (
+            {products.map((bouquet) => (
               <ProductCard key={bouquet.name} {...bouquet} />
             ))}
           </div>
