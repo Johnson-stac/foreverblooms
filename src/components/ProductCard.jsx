@@ -1,6 +1,14 @@
 import { Link } from 'react-router-dom'
 
-function ProductCard({ slug, name, price, image, tag, comingSoon = false }) {
+function ProductCard({
+  slug,
+  name,
+  specialName,
+  price,
+  image,
+  tag,
+  comingSoon = false,
+}) {
   const handleWhatsAppClick = () => {
     if (comingSoon) {
       return
@@ -9,7 +17,7 @@ function ProductCard({ slug, name, price, image, tag, comingSoon = false }) {
     const phoneNumber = '919004071897'
     const message = `Hi, I want to order:
 
-Bouquet: ${name}
+Bouquet: ${specialName} (${name})
 Occasion:
 Delivery Date:
 Custom Message:
@@ -26,7 +34,7 @@ Please share total cost.`
         {image ? (
           <img
             src={image}
-            alt={name}
+            alt={specialName}
             className="aspect-[4/4.4] w-full object-cover transition duration-500 group-hover:scale-105"
           />
         ) : (
@@ -40,8 +48,11 @@ Please share total cost.`
 
       <div className="mt-5 space-y-3">
         <div>
-          <h3 className="font-display text-2xl text-taupe-900">{name}</h3>
-          <p className="mt-2 text-base font-medium text-taupe-700">{price}</p>
+          <h3 className="font-display text-2xl text-taupe-900">{specialName}</h3>
+          <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-dustyrose-500">
+            {name}
+          </p>
+          <p className="mt-3 text-base font-medium text-taupe-700">{price}</p>
         </div>
 
         <p className="inline-flex rounded-full bg-blush-200/45 px-3 py-1 text-xs font-medium tracking-[0.08em] text-taupe-600">
@@ -53,7 +64,7 @@ Please share total cost.`
         <button
           type="button"
           disabled
-          className="mt-6 inline-flex w-full cursor-not-allowed items-center justify-center rounded-full bg-lavender-100 px-5 py-3 text-sm font-semibold text-lavender-700"
+          className="mt-6 inline-flex w-full cursor-not-allowed items-center justify-center rounded-full bg-champagne-100 px-5 py-3 text-sm font-semibold text-dustyrose-600"
         >
           Coming Soon
         </button>
@@ -61,7 +72,7 @@ Please share total cost.`
         <div className="mt-6 grid gap-3">
           <Link
             to={`/products/${slug}`}
-            className="inline-flex w-full items-center justify-center rounded-full bg-lavender-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-lavender-500"
+            className="inline-flex w-full items-center justify-center rounded-full bg-dustyrose-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-dustyrose-600"
           >
             View Details
           </Link>

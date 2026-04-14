@@ -7,6 +7,7 @@ export const products = [
   {
     slug: 'tulips',
     name: 'Tulips',
+    specialName: 'Blush Promise',
     price: '₹950',
     basePrice: 950,
     standardFlowers: 10,
@@ -25,6 +26,7 @@ export const products = [
   {
     slug: 'roses',
     name: 'Roses',
+    specialName: 'Velvet Reverie',
     price: '₹1050',
     basePrice: 1050,
     standardFlowers: 10,
@@ -43,6 +45,7 @@ export const products = [
   {
     slug: 'lilies',
     name: 'Lilies',
+    specialName: 'Lavender Lullaby',
     price: '₹999',
     basePrice: 999,
     standardFlowers: 10,
@@ -61,6 +64,7 @@ export const products = [
   {
     slug: 'orchids',
     name: 'Orchids',
+    specialName: 'Golden Heirloom',
     price: '₹1199',
     basePrice: 1199,
     standardFlowers: 10,
@@ -79,6 +83,7 @@ export const products = [
   {
     slug: 'peonies',
     name: 'Peonies',
+    specialName: 'Pearl Bloom',
     price: 'Launching Soon',
     basePrice: 0,
     standardFlowers: 0,
@@ -94,6 +99,7 @@ export const products = [
   {
     slug: 'daisies',
     name: 'Daisies',
+    specialName: 'Daisy Daydream',
     price: 'Launching Soon',
     basePrice: 0,
     standardFlowers: 0,
@@ -109,6 +115,7 @@ export const products = [
   {
     slug: 'pastel-mix',
     name: 'Pastel Mix',
+    specialName: 'Soft Serenade',
     price: 'Launching Soon',
     basePrice: 0,
     standardFlowers: 0,

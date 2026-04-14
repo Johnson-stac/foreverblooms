@@ -26,7 +26,7 @@ function ProductDetailsPage() {
     const phoneNumber = '919004071897'
     const message = `Hi, I want to order:
 
-Bouquet: ${product.name}
+Bouquet: ${product.specialName} (${product.name})
 Occasion:
 Delivery Date:
 Custom Message:
@@ -42,13 +42,13 @@ Please share total cost.`
   }
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.95),rgba(255,244,246,0.9)_30%,rgba(246,235,227,0.92)_65%,rgba(242,237,255,0.85)_100%)]">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.95),rgba(255,244,246,0.9)_30%,rgba(246,235,227,0.92)_100%)]">
       <Navbar />
 
       <main className="mx-auto w-full max-w-7xl px-4 pb-16 pt-4 sm:px-6 lg:px-10 lg:pb-24">
         <Link
           to="/"
-          className="inline-flex rounded-full border border-blush-200 bg-white/85 px-4 py-2 text-sm font-semibold text-taupe-900 transition hover:border-lavender-300 hover:text-lavender-700"
+          className="inline-flex rounded-full border border-blush-200 bg-white/85 px-4 py-2 text-sm font-semibold text-taupe-900 transition hover:border-dustyrose-300 hover:text-dustyrose-600"
         >
           Back to Collection
         </Link>
@@ -64,13 +64,16 @@ Please share total cost.`
             </div>
           </div>
 
-          <div className="rounded-[2.25rem] border border-white/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.88),rgba(242,237,255,0.68),rgba(247,236,228,0.92))] p-6 shadow-[0_24px_70px_rgba(143,113,110,0.08)] sm:p-8">
-            <p className="inline-flex rounded-full bg-lavender-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-lavender-700">
+          <div className="rounded-[2.25rem] border border-white/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.88),rgba(255,245,246,0.78),rgba(247,236,228,0.92))] p-6 shadow-[0_24px_70px_rgba(143,113,110,0.08)] sm:p-8">
+            <p className="inline-flex rounded-full bg-champagne-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-dustyrose-600">
               Signature Bouquet
             </p>
             <h1 className="mt-4 font-display text-4xl text-taupe-900 sm:text-5xl">
-              {product.name}
+              {product.specialName}
             </h1>
+            <p className="mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-dustyrose-500">
+              {product.name}
+            </p>
             <p className="mt-4 text-base leading-7 text-taupe-600">{product.description}</p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -79,7 +82,7 @@ Please share total cost.`
                 <p className="mt-2 font-display text-3xl text-taupe-900">₹{totalPrice}</p>
                 <p className="mt-2 text-sm text-taupe-600">Base price: {product.price}</p>
               </div>
-              <div className="rounded-[1.5rem] bg-lavender-700 p-5 text-white">
+              <div className="rounded-[1.5rem] bg-taupe-900 p-5 text-white">
                 <p className="text-sm uppercase tracking-[0.18em] text-white/65">
                   Standard bouquet
                 </p>
@@ -100,7 +103,7 @@ Please share total cost.`
                     Increase flower count to make the bouquet fuller.
                   </p>
                 </div>
-                <div className="rounded-full bg-lavender-100 px-4 py-2 text-sm font-semibold text-lavender-700">
+                <div className="rounded-full bg-champagne-100 px-4 py-2 text-sm font-semibold text-dustyrose-600">
                   +₹{product.extraFlowerPrice} / flower
                 </div>
               </div>
@@ -109,17 +112,17 @@ Please share total cost.`
                 <button
                   type="button"
                   onClick={() => setExtraFlowers((current) => Math.max(0, current - 1))}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-blush-200 bg-white text-xl text-taupe-900 transition hover:border-lavender-300 hover:text-lavender-700"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-blush-200 bg-white text-xl text-taupe-900 transition hover:border-dustyrose-300 hover:text-dustyrose-600"
                 >
                   -
                 </button>
-                <div className="min-w-[88px] rounded-full bg-[#f8f1ff] px-4 py-3 text-center text-lg font-semibold text-taupe-900">
+                <div className="min-w-[88px] rounded-full bg-[#fdf0f2] px-4 py-3 text-center text-lg font-semibold text-taupe-900">
                   {extraFlowers}
                 </div>
                 <button
                   type="button"
                   onClick={() => setExtraFlowers((current) => current + 1)}
-                  className="flex h-11 w-11 items-center justify-center rounded-full border border-blush-200 bg-white text-xl text-taupe-900 transition hover:border-lavender-300 hover:text-lavender-700"
+                  className="flex h-11 w-11 items-center justify-center rounded-full border border-blush-200 bg-white text-xl text-taupe-900 transition hover:border-dustyrose-300 hover:text-dustyrose-600"
                 >
                   +
                 </button>
@@ -138,21 +141,21 @@ Please share total cost.`
 
         <section className="mt-10 grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="rounded-[2rem] border border-white/70 bg-white/82 p-6 shadow-[0_16px_45px_rgba(143,113,110,0.07)]">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-lavender-700">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-dustyrose-600">
               Handcrafted details
             </p>
             <p className="mt-4 text-base leading-8 text-taupe-600">{product.details}</p>
           </div>
 
           <div className="rounded-[2rem] border border-white/70 bg-white/82 p-6 shadow-[0_16px_45px_rgba(143,113,110,0.07)]">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-lavender-700">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-dustyrose-600">
               Materials used
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               {product.materials.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full bg-lavender-100 px-4 py-2 text-sm font-medium text-lavender-700"
+                  className="rounded-full bg-champagne-100 px-4 py-2 text-sm font-medium text-dustyrose-600"
                 >
                   {item}
                 </span>

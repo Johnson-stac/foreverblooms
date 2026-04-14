@@ -58,12 +58,12 @@ function WhyChooseUsCard({ title, description }) {
 
 function HomePage() {
   return (
-    <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.95),rgba(255,244,246,0.9)_30%,rgba(246,235,227,0.92)_65%,rgba(242,237,255,0.85)_100%)]">
+    <div className="min-h-screen bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.95),rgba(255,244,246,0.9)_30%,rgba(246,235,227,0.92)_100%)]">
       <Navbar />
 
       <main>
         <section className="mx-auto w-full max-w-7xl px-4 pt-2 sm:px-6 lg:px-10">
-          <div className="flex gap-3 overflow-x-auto rounded-[1.75rem] border border-lavender-200/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.88),rgba(242,237,255,0.8))] p-3 sm:grid sm:grid-cols-2 sm:gap-px sm:overflow-visible sm:border-blush-200/80 sm:bg-blush-200/60 sm:p-0 lg:grid-cols-6">
+          <div className="flex gap-3 overflow-x-auto rounded-[1.75rem] border border-blush-200/80 bg-[linear-gradient(135deg,rgba(255,255,255,0.92),rgba(253,240,242,0.88))] p-3 sm:grid sm:grid-cols-2 sm:gap-px sm:overflow-visible sm:border-blush-200/80 sm:bg-blush-200/60 sm:p-0 lg:grid-cols-6">
             {categories.map((category) => (
               <div
                 key={category}
@@ -95,7 +95,7 @@ function HomePage() {
               </a>
               <a
                 href="#why-us"
-                className="inline-flex items-center justify-center rounded-full border border-lavender-200 bg-white/85 px-7 py-3.5 text-sm font-semibold text-lavender-700 transition hover:bg-lavender-100"
+                className="inline-flex items-center justify-center rounded-full border border-champagne-200 bg-white/85 px-7 py-3.5 text-sm font-semibold text-dustyrose-600 transition hover:bg-champagne-100"
               >
                 Why ForeverBlooms
               </a>
@@ -107,7 +107,7 @@ function HomePage() {
                   key={item.title}
                   className="rounded-[1.5rem] border border-white/70 bg-white/80 px-5 py-5 shadow-[0_16px_40px_rgba(143,113,110,0.06)]"
                 >
-                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-lavender-700">
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-dustyrose-600">
                     {item.title}
                   </p>
                   <p className="mt-2 text-sm leading-6 text-taupe-600">{item.detail}</p>
@@ -117,20 +117,23 @@ function HomePage() {
           </div>
 
           <div className="relative order-1 lg:order-2">
-            <div className="absolute -left-4 top-10 h-28 w-28 rounded-full bg-lavender-200/70 blur-3xl sm:h-32 sm:w-32" />
+            <div className="absolute -left-4 top-10 h-28 w-28 rounded-full bg-blush-200/70 blur-3xl sm:h-32 sm:w-32" />
             <div className="absolute right-0 top-0 h-32 w-32 rounded-full bg-champagne-100/80 blur-3xl sm:h-36 sm:w-36" />
             <div className="relative rounded-[2rem] border border-white/70 bg-white/70 p-4 shadow-[0_30px_90px_rgba(143,113,110,0.12)] backdrop-blur sm:p-6">
-              <div className="rounded-[1.75rem] bg-gradient-to-br from-lavender-100 via-white to-champagne-100 p-5 sm:rounded-[2rem] sm:p-8">
+              <div className="rounded-[1.75rem] bg-gradient-to-br from-rose-50 via-white to-champagne-100 p-5 sm:rounded-[2rem] sm:p-8">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="rounded-[1.5rem] bg-white/90 p-5">
                     <p className="text-xs uppercase tracking-[0.16em] text-taupe-500 sm:text-sm">
                       Signature Bouquet
                     </p>
                     <p className="mt-3 font-display text-2xl text-taupe-900 sm:text-3xl">
-                      Tulips
+                      {availableProducts[0].specialName}
+                    </p>
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-[0.2em] text-dustyrose-500">
+                      {availableProducts[0].name}
                     </p>
                   </div>
-                  <div className="rounded-[1.5rem] bg-lavender-700 p-5 text-white">
+                  <div className="rounded-[1.5rem] bg-taupe-900 p-5 text-white">
                     <p className="text-xs uppercase tracking-[0.16em] text-white/60 sm:text-sm">
                       Starting At
                     </p>
@@ -158,7 +161,7 @@ function HomePage() {
               Bestselling Blooms
             </h2>
             <p className="mt-2 text-base text-taupe-500">
-              Tap a bouquet to open its detail page, see the full information, and customize the flower count.
+              Named bouquet collections with their flower type below, plus dedicated detail pages for customization.
             </p>
           </div>
 
@@ -170,10 +173,10 @@ function HomePage() {
         </section>
 
         <section className="mx-auto w-full max-w-7xl px-4 pb-14 sm:px-6 lg:px-10">
-          <div className="overflow-hidden rounded-[2.25rem] border border-white/70 bg-[linear-gradient(120deg,rgba(253,246,248,0.9),rgba(242,237,255,0.8),rgba(247,236,228,0.95))] shadow-[0_24px_70px_rgba(143,113,110,0.1)]">
+          <div className="overflow-hidden rounded-[2.25rem] border border-white/70 bg-[linear-gradient(120deg,rgba(253,246,248,0.9),rgba(255,249,247,0.88),rgba(247,236,228,0.95))] shadow-[0_24px_70px_rgba(143,113,110,0.1)]">
             <div className="grid items-center gap-8 px-6 py-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10 lg:px-14 lg:py-14">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-lavender-700">
+                <p className="text-sm font-semibold uppercase tracking-[0.24em] text-dustyrose-600">
                   Seasonal Edit
                 </p>
                 <h2 className="mt-4 font-display text-4xl leading-tight text-taupe-900 sm:text-5xl">
@@ -191,8 +194,8 @@ function HomePage() {
                 </a>
               </div>
 
-              <div className="flex min-h-[220px] items-center justify-center rounded-[2rem] border border-lavender-200/70 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.9),rgba(229,219,255,0.55)_45%,rgba(246,231,219,0.9))]">
-                <span className="px-4 text-center font-display text-4xl text-lavender-500 sm:text-6xl">
+              <div className="flex min-h-[220px] items-center justify-center rounded-[2rem] border border-champagne-200/70 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.9),rgba(255,239,236,0.7)_45%,rgba(246,231,219,0.9))]">
+                <span className="px-4 text-center font-display text-4xl text-dustyrose-300 sm:text-6xl">
                   SUMMER BLOOMS
                 </span>
               </div>
@@ -220,7 +223,7 @@ function HomePage() {
               ))}
             </div>
 
-            <div className="mt-8 grid gap-4 rounded-[1.75rem] border border-lavender-200/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.82),rgba(242,237,255,0.8))] p-5 text-center sm:grid-cols-3">
+            <div className="mt-8 grid gap-4 rounded-[1.75rem] border border-champagne-200/70 bg-[linear-gradient(135deg,rgba(255,255,255,0.82),rgba(255,247,244,0.86))] p-5 text-center sm:grid-cols-3">
               <div>
                 <p className="font-display text-3xl text-taupe-900">100%</p>
                 <p className="mt-1 text-sm uppercase tracking-[0.14em] text-taupe-500">
