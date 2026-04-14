@@ -8,6 +8,13 @@ export default {
           200: '#f4d7dc',
           300: '#eabec7',
         },
+        lavender: {
+          100: '#f2edff',
+          200: '#e5dbff',
+          300: '#cfc0f5',
+          500: '#9a84d6',
+          700: '#69549c',
+        },
         champagne: {
           100: '#f6e7db',
         },

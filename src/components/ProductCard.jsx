@@ -1,5 +1,9 @@
-function ProductCard({ name, price, image, tag }) {
+function ProductCard({ name, price, image, tag, comingSoon = false }) {
   const handleWhatsAppClick = () => {
+    if (comingSoon) {
+      return
+    }
+
     const phoneNumber = '919004071897'
     const message = `Hi, I want to order:
 
@@ -46,9 +50,14 @@ Please share total cost.`
       <button
         type="button"
         onClick={handleWhatsAppClick}
-        className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-taupe-900 px-5 py-3 text-sm font-semibold text-white transition hover:bg-dustyrose-500"
+        disabled={comingSoon}
+        className={`mt-6 inline-flex w-full items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition ${
+          comingSoon
+            ? 'cursor-not-allowed bg-lavender-100 text-lavender-700'
+            : 'bg-taupe-900 text-white hover:bg-dustyrose-500'
+        }`}
       >
-        Order on WhatsApp
+        {comingSoon ? 'Coming Soon' : 'Order on WhatsApp'}
       </button>
     </article>
   )
